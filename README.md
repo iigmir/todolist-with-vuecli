@@ -1,6 +1,6 @@
 # todolist
 
-> A practice of Vue componment and vue-cli
+Todolist is a practice for Vue componment and vue-cli.
 
 ## Build Setup
 

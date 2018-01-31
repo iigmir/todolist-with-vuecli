@@ -1,7 +1,7 @@
 {
   "name": "todolist",
   "version": "1.0.0",
-  "description": "A practice of Vue componment and vue-cli",
+  "description": "Todolist is a practice for Vue componment and vue-cli.",
   "author": "iigmir",
   "private": true,
   "scripts": {

@@ -1,13 +1,18 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import title from '@/components/title';
+import apptitle from '@/components/apptitle';
+import intro from '@/components/intro';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     routes: [{
         path: '/',
-        name: 'title',
-        component: title
+        name: 'apptitle',
+        component: apptitle
+    },{
+        path: '/',
+        name: 'intro',
+        component: intro
     }]
 });

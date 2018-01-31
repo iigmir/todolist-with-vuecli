@@ -3,14 +3,13 @@
         <h1>
             A VueJS app which with <span class="ani">{{ current_message }}</span>!
         </h1>
-        <p> {{ helptext }} </p>
     </div>
 </template>
 
 <script>
 export default
 {
-    name: "title",
+    name: "apptitle",
     data ()
     {
         return {
@@ -33,29 +32,15 @@ export default
         setInterval(function()
         {
             self.item_change();
-        }, 5000);
+        }, 1500);
     }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@keyframes mrq
-{
-    0% { transform: translateY(100%); }
-    100% { transform: translateY(-100%);  }
-}
-
-a
-{
-    /*color: #2c3e50;*/
-    color:pink;
-}
-
 .ani
 {
-    transform:translateY(100%);
-    animation: mrq 4s linear infinite;
     color:#FF6421;
 }
 </style>
