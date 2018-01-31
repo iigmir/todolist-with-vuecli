@@ -1,7 +1,6 @@
 <template>
     <div id="app">
         <router-view/>
-        <p>Hello <a href="//motorola.com">Moto</a></p>
     </div>
 </template>
 
@@ -24,7 +23,7 @@ export default
     h1
     {
         // H1 text
-        color:#FF6421;
+        color:rgb(128, 128, 0);
     }
 }
 </style>
