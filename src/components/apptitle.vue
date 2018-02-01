@@ -10,8 +10,7 @@
 export default
 {
     name: "apptitle",
-    data ()
-    {
+    data () {
         return {
             msg: ["todo list","Hello World","basic MVC","componment","webpack"],
             current_message: "app",
@@ -26,8 +25,7 @@ export default
             this.current_msg_num += 1;
         }
     },
-    mounted ()
-    {
+    mounted () {
         let self = this;
         setInterval(function()
         {

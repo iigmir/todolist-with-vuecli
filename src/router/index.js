@@ -9,10 +9,10 @@ export default new Router({
     routes: [{
         path: '/',
         name: 'apptitle',
-        component: apptitle
-    },{
-        path: '/',
-        name: 'intro',
-        component: intro
+        components: {
+            default: apptitle,
+            apptitle: apptitle,
+            intro: intro
+        }
     }]
 });

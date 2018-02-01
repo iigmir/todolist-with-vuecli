@@ -1,6 +1,7 @@
 <template>
     <div id="app">
-        <router-view/>
+        <router-view name="apptitle"></router-view>
+        <router-view name="intro"></router-view>
     </div>
 </template>
 
@@ -21,8 +22,7 @@ export default
     color: #2c3e50;
     margin-top: 60px;
     h1
-    {
-        // H1 text
+    {   // H1 text
         color:rgb(128, 128, 0);
     }
 }
