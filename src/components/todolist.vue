@@ -2,7 +2,8 @@
     <div class="todolist">
         <p> This is an small app. I will do a simple {{ helptext }}, just easy practice anyway...</p>
         <div class="app">
-            <form v-on:submit.prevent="sent_text">
+            <form
+            v-on:submit.prevent="sent_text" >
                 <label>
                     <input v-model="panding_text"
                     name="panding_text" type="text"
@@ -12,17 +13,20 @@
             </form>
             <ul>
                 <li
-                    v-for="(la_item, la_index) in list_array"
-                    v-bind:key="la_item.id" >
-                    <label>
-                        <input type="checkbox"
+                v-for="(la_item, la_index) in list_array"
+                v-bind:key="la_item.id" >
+                    <label v-bind:class="{ pand_del : bind_label_class(la_index)}" >
+                        <input
+                        type="checkbox"
                         v-model="panding_delete_index"
                         v-bind:value="la_index" >
                         <span> {{ la_item }} </span>
                     </label>
                 </li>
             </ul>
-            <button>Clear</button>
+            <button v-on:click="refresh_array()">
+                Clear
+            </button>
         </div>
     </div>
 </template>
@@ -39,14 +43,25 @@ export default
             panding_delete_index:[]
         }
     },
-    methods:{
+    methods: {
         sent_text() {
             this.list_array.push( this.panding_text );
+        },
+        bind_label_class( blc_input ) {
+            return this.panding_delete_index.includes( blc_input );
+        },
+        refresh_array() {
+            let new_array = [];
+            this.list_array.forEach( (laf_ele,laf_idx) => {
+                if( !this.panding_delete_index.includes(laf_idx) )
+                {
+                    new_array.push( laf_ele );
+                }
+            });
+            this.list_array = new_array;
+            this.panding_delete_index = [];
         }
-    },
-    mounted () {
-        //
-    },
+    }
 }
 </script>
 
@@ -70,10 +85,7 @@ export default
                     display: block;
                     width: 100%;
                 }
-                &.pand_del
-                {
-                    text-decoration-line: line-through;
-                }
+                .pand_del { text-decoration-line: line-through; }
             }
         }
     }
