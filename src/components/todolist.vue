@@ -1,7 +1,6 @@
 <template>
     <div class="intro">
         <p> This is an small app. I will do a simple {{ helptext }}, just easy practice anyway...</p>
-        <p hidden> 各位好我是柱柱姊 </p>
     </div>
 </template>
 
@@ -14,5 +13,11 @@ export default
             helptext: "thing",
         }
     },
+    methods:{
+        //
+    },
+    mounted () {
+        //
+    }
 }
 </script>

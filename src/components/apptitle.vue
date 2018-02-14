@@ -21,7 +21,8 @@ export default
     methods: {
         item_change()
         {
-            this.current_message = this.msg[ this.current_msg_num % this.msg.length ];
+            let curr_msg_pos =  this.current_msg_num % this.msg.length;
+            this.current_message = this.msg[ curr_msg_pos ];
             this.current_msg_num += 1;
         }
     },
