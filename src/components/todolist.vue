@@ -15,7 +15,8 @@
                 <li
                 v-for="(la_item, la_index) in list_array"
                 v-bind:key="la_item.id" >
-                    <label v-bind:class="{ pand_del : bind_label_class(la_index)}" >
+                    <label
+                    v-bind:class="{ pand_del : bind_label_class(la_index)}">
                         <input
                         type="checkbox"
                         v-model="panding_delete_index"
@@ -24,8 +25,9 @@
                     </label>
                 </li>
             </ul>
-            <button v-on:click="refresh_array()">
-                Clear
+            <button
+            v-on:click="refresh_array()">
+                Clear selected item
             </button>
         </div>
     </div>
@@ -44,18 +46,21 @@ export default
         }
     },
     methods: {
-        sent_text() {
+        sent_text()
+        {
             this.list_array.push( this.panding_text );
         },
-        bind_label_class( blc_input ) {
+        bind_label_class( blc_input )
+        {
             return this.panding_delete_index.includes( blc_input );
         },
-        refresh_array() {
+        refresh_array()
+        {
             let new_array = [];
-            this.list_array.forEach( (laf_ele,laf_idx) => {
-                if( !this.panding_delete_index.includes(laf_idx) )
+            this.list_array.forEach( ( elem ,indx) => {
+                if( !this.panding_delete_index.includes(indx) )
                 {
-                    new_array.push( laf_ele );
+                    new_array.push( elem );
                 }
             });
             this.list_array = new_array;
